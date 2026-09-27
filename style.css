@@ -1,20 +1,3 @@
-/* =====================================================================
-   BEAN BOUTIQUE - site stylesheet
-   All styling for every page lives here. No <style> elements and no
-   style="" attributes are used anywhere in the HTML.
-
-   CONTENTS
-   01 Design tokens          08 Cards + boxes
-   02 Base + reset           09 Animated search
-   03 Layout helpers         10 Forms
-   04 Announcement bar       11 Shopping cart
-   05 Header + navbar        12 Slideshow
-   06 Hero                   13 Footer
-   07 Sections               14 Responsive + motion
-   ===================================================================== */
-
-
-/* ---------- 01 Design tokens ---------------------------------------- */
 
 :root{
     --dark:   #664848;
@@ -40,8 +23,6 @@
     --measure: 1180px;
 }
 
-
-/* ---------- 02 Base + reset ----------------------------------------- */
 
 *,
 *::before,
@@ -76,13 +57,11 @@ img{
     display: block;
 }
 
-/* the hidden attribute must win over any display rule set below,
-   otherwise elements JavaScript hides would stay on screen */
+
 [hidden]{
     display: none !important;
 }
 
-/* flex items must not be squashed on short screens */
 body > *{
     flex-shrink: 0;
 }
@@ -103,7 +82,7 @@ h1, h2, h3, h4{
     letter-spacing: -0.015em;
 }
 
-/* the big two run light, which suits Montserrat at display sizes */
+
 h1, h2{ font-weight: 300; }
 
 h1{ font-size: clamp(38px, 5.4vw, 74px); }
@@ -112,7 +91,7 @@ h3{ font-size: clamp(20px, 1.9vw, 27px); }
 
 p{ margin: 0 0 1.1em; }
 
-/* keyboard users always get a visible focus ring */
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -123,8 +102,6 @@ summary:focus-visible{
     outline-offset: 3px;
 }
 
-
-/* ---------- 03 Layout helpers --------------------------------------- */
 
 .wrap{
     width: 100%;
@@ -145,7 +122,6 @@ summary:focus-visible{
     padding: clamp(36px, 5vw, 64px) 0;
 }
 
-/* small letterspaced label, used above headings */
 .eyebrow{
     font-family: var(--wide);
     font-size: 10px;
@@ -170,13 +146,11 @@ summary:focus-visible{
     margin: 0;
 }
 
-/* an italic accent word, like the reference posters */
 .accent{
     font-family: var(--display);
     font-style: italic;
 }
 
-/* screen-reader-only, for labels that shouldn't show visually */
 .visually-hidden{
     position: absolute;
     width: 1px;
@@ -188,8 +162,6 @@ summary:focus-visible{
     white-space: nowrap;
 }
 
-
-/* ---------- 04 Announcement bar ------------------------------------- */
 
 .announce{
     background-color: var(--darker);
@@ -212,8 +184,6 @@ summary:focus-visible{
 
 .announce li{ white-space: nowrap; }
 
-
-/* ---------- 05 Header + navbar -------------------------------------- */
 
 .site-header{
     background-color: var(--white);
@@ -292,7 +262,6 @@ summary:focus-visible{
     transition: color 0.25s ease;
 }
 
-/* hover underline grows out from the middle of the tab */
 .nav-links a::after{
     content: "";
     position: absolute;
@@ -326,8 +295,6 @@ summary:focus-visible{
 }
 
 
-/* ---------- 06 Hero -------------------------------------------------- */
-
 .hero{
     position: relative;
     background-image: url(hb3.jpg);
@@ -339,8 +306,7 @@ summary:focus-visible{
     padding-top: 46.75%;
 }
 
-/* browsers that understand aspect-ratio use it instead - same result,
-   but it survives any later change to the box model */
+
 @supports (aspect-ratio: 1 / 1){
     .hero{
         padding-top: 0;
@@ -348,7 +314,7 @@ summary:focus-visible{
     }
 }
 
-/* text sits on the image; % keeps it locked as the image scales */
+
 .hero-content{
     position: absolute;
     left: 6%;
@@ -370,7 +336,7 @@ summary:focus-visible{
     color: var(--dark);
 }
 
-/* page banner used on the inner pages instead of the big hero */
+
 .page-head{
     background-color: var(--white);
     border-bottom: 1px solid var(--pink);
@@ -386,10 +352,6 @@ summary:focus-visible{
     margin: 0 auto;
 }
 
-
-/* ---------- 07 Sections ---------------------------------------------- */
-
-/* thin repeating strip, like the reference site's "SINCE 1810" rule */
 .strip{
     background-color: var(--pink);
     border-top: 1px solid var(--pink);
@@ -413,7 +375,6 @@ summary:focus-visible{
 
 .strip li{ white-space: nowrap; }
 
-/* two colour blocks side by side */
 .split{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -439,7 +400,6 @@ summary:focus-visible{
     height: auto;
 }
 
-/* image on one side, words on the other */
 .feature{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -453,8 +413,7 @@ summary:focus-visible{
     padding: clamp(20px, 3vw, 44px);
 }
 
-/* a plain statement band: centred words on a slightly deeper paper,
-   thin rules above and below, no image */
+
 .features{
     display: flex;
     flex-direction: column;
@@ -473,8 +432,6 @@ summary:focus-visible{
 }
 
 
-/* ---------- 08 Cards + boxes ----------------------------------------- */
-
 .grid{
     display: grid;
     gap: clamp(18px, 2.4vw, 30px);
@@ -482,13 +439,11 @@ summary:focus-visible{
 
 .grid-2{ grid-template-columns: repeat(2, 1fr); }
 
-/* the equipment page carries four items, so it reads better two-up.
-   Scoped above the phone breakpoint so the mobile rules still win below it. */
 @media (min-width: 561px){
     .grid-equipment{ grid-template-columns: repeat(2, 1fr); }
 
     .grid-equipment .card-art img{
-        max-height: 300px;
+        max-height: 300p
         width: auto;
         margin: 0 auto;
     }
@@ -496,8 +451,7 @@ summary:focus-visible{
 .grid-3{ grid-template-columns: repeat(3, 1fr); }
 .grid-4{ grid-template-columns: repeat(4, 1fr); }
 
-/* the boxes: border-radius, a box-shadow hairline, and a quiet hover
-   where the outline darkens - no lift, no drop shadow */
+
 .card{
     position: relative;
     display: flex;
@@ -521,9 +475,7 @@ summary:focus-visible{
     overflow: hidden;
 }
 
-/* Pictures come in different proportions, which pushed card titles out of
-   line with each other. A fixed box with the image centred inside keeps every
-   card in a row the same shape. Equipment has its own rule, so it's excluded. */
+
 .grid-3 .card-art{
     aspect-ratio: 3 / 4;
     display: flex;
@@ -565,7 +517,7 @@ summary:focus-visible{
     margin-bottom: 12px;
 }
 
-/* corner badge, so a flagged card still lines up with its neighbours */
+
 .card-badge{
     position: absolute;
     top: 16px;
@@ -594,7 +546,6 @@ summary:focus-visible{
     font-size: 15px;
 }
 
-/* small round icon boxes, used for the "what makes us" row */
 .pill-row{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -666,7 +617,6 @@ summary:focus-visible{
 }
 
 
-/* benefit lists inside the subscription cards */
 .card ul{
     list-style: none;
     margin: 0 0 16px;
@@ -698,7 +648,6 @@ summary:focus-visible{
     color: var(--dark);
 }
 
-/* the "usage tips" drawer on the equipment cards - no JavaScript needed */
 .card details{
     border-top: 1px solid var(--pink);
     margin-bottom: 14px;
@@ -715,8 +664,6 @@ summary:focus-visible{
     transition: color 0.25s ease;
 }
 
-/* both of these are needed: the ::marker rule covers Firefox,
-   the -webkit- one covers older Safari */
 .card summary::marker{ content: ""; }
 .card summary::-webkit-details-marker{ display: none; }
 
@@ -738,7 +685,7 @@ summary:focus-visible{
     font-size: 14.5px;
 }
 
-/* ---------- 09 Animated search --------------------------------------- */
+
 
 .search-tool{
     max-width: 620px;
@@ -781,8 +728,7 @@ summary:focus-visible{
     outline: none;
 }
 
-/* the animated bit: a hint word and a blinking caret cycle while the
-   box is empty, and both vanish the moment the field is used */
+
 .search-hint{
     position: absolute;
     left: 54px;
@@ -818,8 +764,7 @@ summary:focus-visible{
     animation: hintCycle 9s infinite;
 }
 
-/* scoped with two classes so these beat the `animation` shorthand
-   on `.search-words span`, which would otherwise reset the delay */
+
 .search-words .hint-1{ animation-delay: 0s; }
 .search-words .hint-2{ animation-delay: 3s; }
 .search-words .hint-3{ animation-delay: 6s; }
@@ -854,7 +799,6 @@ summary:focus-visible{
     min-height: 1.4em;
 }
 
-/* cards animate out when they don't match the search */
 .is-hidden{
     display: none;
 }
@@ -875,7 +819,6 @@ summary:focus-visible{
 }
 
 
-/* ---------- 10 Forms -------------------------------------------------- */
 
 .form-card{
     background-color: var(--white);
@@ -917,7 +860,7 @@ summary:focus-visible{
     transition: border-color 0.25s ease;
 }
 
-/* focus is a strong light-to-dark change in the line, not a glow */
+
 .field input:focus,
 .field select:focus,
 .field textarea:focus{
@@ -935,8 +878,6 @@ summary:focus-visible{
     margin: 14px 0 0;
 }
 
-
-/* ---------- 11 Shopping cart ------------------------------------------ */
 
 .cart-layout{
     display: grid;
@@ -1035,8 +976,7 @@ summary:focus-visible{
     top: 78px;
 }
 
-/* the basket sidebar heading moved from h3 to h2 for a valid outline,
-   so keep it at the old h3 size rather than the full h2 size */
+
 .summary h2{
     font-size: clamp(20px, 1.9vw, 27px);
 }
@@ -1057,7 +997,7 @@ summary:focus-visible{
     font-size: 19px;
 }
 
-/* shown after checkout, in place of the basket */
+
 .cart-done{
     text-align: center;
     max-width: 52ch;
@@ -1079,7 +1019,7 @@ summary:focus-visible{
     color: var(--dark);
 }
 
-/* little count bubble on the CART link in the header */
+
 .cart-count{
     display: inline-block;
     min-width: 19px;
@@ -1094,7 +1034,6 @@ summary:focus-visible{
 }
 
 
-/* ---------- 12 Slideshow ---------------------------------------------- */
 
 .slideshow{
     position: relative;
@@ -1111,8 +1050,7 @@ summary:focus-visible{
     pointer-events: none;
 }
 
-/* The radios are hidden, so a keyboard user focusing one would otherwise get
-   no feedback at all. Show the ring on the dot that radio controls. */
+
 #slide-1:focus ~ .slide-dots .dot-1,
 #slide-2:focus ~ .slide-dots .dot-2,
 #slide-3:focus ~ .slide-dots .dot-3{
@@ -1142,7 +1080,7 @@ summary:focus-visible{
     animation: slideCycle 18s infinite;
 }
 
-/* the tones live here, never in a style attribute on the HTML */
+
 .slide-1,
 .slide-2,
 .slide-3{ --slide-bg: var(--white); }
@@ -1159,7 +1097,7 @@ summary:focus-visible{
     100%   { opacity: 0; visibility: hidden;  transform: scale(1.04); }
 }
 
-/* once a dot or arrow is clicked the reel stops on the chosen slide */
+
 .slide-radio:checked ~ .slides .slide{
     animation: none;
     opacity: 0;
@@ -1314,8 +1252,6 @@ summary:focus-visible{
 }
 
 
-/* ---------- 13 Footer -------------------------------------------------- */
-
 .site-footer{
     background-color: var(--darker);
     color: var(--white);
@@ -1395,9 +1331,6 @@ summary:focus-visible{
 }
 
 
-/* ---------- 14 Responsive + motion ------------------------------------- */
-
-/* ---- tablet ---- */
 @media (max-width: 900px){
     .grid-4{ grid-template-columns: repeat(2, 1fr); }
     .grid-3{ grid-template-columns: repeat(2, 1fr); }
@@ -1423,15 +1356,14 @@ summary:focus-visible{
         position: relative;
     }
 
-    /* stacked slides need the reel to hold one slide's height */
+   
     .slides{ position: relative; inset: auto; }
     .slide:not(:first-child){ position: absolute; inset: 0; }
 
     .slide-art{ width: 150px; }
 }
 
-/* ---- the hero image is too wide to carry text on a phone, so the
-       words move underneath it and the picture keeps its own row ---- */
+
 @media (max-width: 760px){
     .hero{
         aspect-ratio: auto;
@@ -1462,7 +1394,7 @@ summary:focus-visible{
     .field-row{ grid-template-columns: 1fr; }
 }
 
-/* ---- phone ---- */
+
 @media (max-width: 560px){
     body{ font-size: 16px; }
     :root{ --gutter: 18px; }
@@ -1509,15 +1441,14 @@ summary:focus-visible{
         padding: 6px 16px;
     }
 
-    /* once the table is display:block the caption shrinks to fit and
-       wraps one word per line, so give it the full width back */
+   
     .cart-table caption{
         display: block;
         width: 100%;
         padding: 14px 16px 8px;
     }
 
-    /* the column heading comes back as a label beside each value */
+    
     .cart-table td[data-label]::before{
         content: attr(data-label);
         display: inline-block;
@@ -1530,7 +1461,7 @@ summary:focus-visible{
 
     .search-hint{ left: 46px; font-size: 15px; }
 
-    /* ---- tighter page furniture, so content starts sooner ---- */
+    
     .announce{ padding: 7px 0; font-size: 9.5px; }
     .nav-header{ padding: 12px var(--gutter) 8px; gap: 4px 26px; }
     .logo{ font-size: 23px; }
@@ -1538,10 +1469,10 @@ summary:focus-visible{
     .page-head{ padding: 34px 0; }
     .section{ padding: 44px 0; }
 
-    /* the statement band should hug its words rather than fill the screen */
+   
     .features{ min-height: 0; padding: 48px var(--gutter); }
 
-    /* ---- 44px minimum touch targets ---- */
+    
     .nav-links a{
         display: flex;
         align-items: center;
@@ -1604,8 +1535,7 @@ summary:focus-visible{
 
     .slide-nav{ width: 46px; height: 46px; }
 
-    /* ---- pictures need not be full-width squares on a phone: this alone
-           takes roughly 145px off every product card ---- */
+   
     .card{ padding: 16px; }
 
     .grid-3 .card-art{ aspect-ratio: auto; }
@@ -1619,7 +1549,7 @@ summary:focus-visible{
     .pill{ padding: 18px 12px; }
 }
 
-/* ---- respect a reduced-motion preference ---- */
+
 @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior: auto; }
 
@@ -1631,11 +1561,11 @@ summary:focus-visible{
         transition-duration: 0.001ms !important;
     }
 
-    /* without the reel running, show the first slide */
+    
     .slide:nth-child(1){ opacity: 1; visibility: visible; }
 }
 
-/* ---- print ---- */
+
 @media print{
     .announce,
     .navbar,
